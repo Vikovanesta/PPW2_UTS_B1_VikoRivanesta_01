@@ -23,7 +23,7 @@ class PemainController extends Controller
      */
     public function create()
     {
-        //
+        return view('pemain.create');
     }
 
     /**
@@ -31,7 +31,8 @@ class PemainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pemain::create($request->all());
+        return redirect()->route('pemain.index');
     }
 
     /**

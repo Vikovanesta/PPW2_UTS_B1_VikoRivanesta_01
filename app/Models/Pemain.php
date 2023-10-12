@@ -10,4 +10,10 @@ class Pemain extends Model
     use HasFactory;
 
     protected $table = 'pemain';
+    
+    protected $fillable = [
+        'nama_pemain',
+        'posisi',
+        'no_punggung',
+    ];
 }
