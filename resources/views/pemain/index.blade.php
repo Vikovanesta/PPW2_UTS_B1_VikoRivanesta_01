@@ -13,6 +13,7 @@
                 <th scope="col">Nama pemain</th>
                 <th scope="col">No punggung</th>
                 <th scope="col">Posisi</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
                     <td>{{ $pemain->nama_pemain }}</td>
                     <td>{{ $pemain->no_punggung }}</td>
                     <td>{{ $pemain->posisi }}</td>
+                    <td><a href="{{ route('pemain.show', $pemain->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Show</a></td>
                 </tr>
             @endforeach
         </tbody>

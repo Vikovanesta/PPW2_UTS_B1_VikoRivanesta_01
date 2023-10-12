@@ -31,7 +31,13 @@ class PemainController extends Controller
      */
     public function store(Request $request)
     {
-        Pemain::create($request->all());
+        $request = $request->validate([
+            'nama_pemain' => 'required|string',
+            'posisi' => 'required|string',
+            'no_punggung' => 'required|integer',
+        ]);
+
+        Pemain::create($request);
         return redirect()->route('pemain.index');
     }
 
@@ -40,7 +46,7 @@ class PemainController extends Controller
      */
     public function show(Pemain $pemain)
     {
-        //
+        return view('pemain.show', compact('pemain'));
     }
 
     /**
